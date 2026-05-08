@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskFaidat — AI Portfolio Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- LEFT PANEL -->
+        <div class="left-panel">
+            <div class="brand">
+                <div class="brand-icon">AF</div>
+                <span class="brand-name">AskFaidat</span>
+            </div>
+            <div class="profile-section">
+                <div class="profile-img">FE</div>
+                <h2 class="profile-name">Faidat Egberinde</h2>
+                <p class="profile-title">Full-Stack Developer</p>
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    Open to Opportunities
+                </div>
+                <p class="profile-location">📍 Lagos, Nigeria · Worldwide Remote</p>
+            </div>
+            <div class="quick-links">
+                <p class="links-title">Quick Links</p>
+                <a href="https://faidat-portfolio.vercel.app" target="_blank" class="quick-link">
+                    <span>🌐</span> Portfolio
+                </a>
+                <a href="mailto:faidategberinde@gmail.com" class="quick-link">
+                    <span>✉</span> Email
+                </a>
+                <a href="https://linkedin.com/in/faidat-egberinde-b6934a3bb" target="_blank" class="quick-link">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="https://github.com/Barakat-20" target="_blank" class="quick-link">
+                    <span>🐙</span> GitHub
+                </a>
+            </div>
+            <div class="suggestions-panel">
+                <p class="links-title">Ask me about</p>
+                <button class="suggest-btn" onclick="useSuggestion('What projects has Faidat built?')">Projects</button>
+                <button class="suggest-btn" onclick="useSuggestion('What is her tech stack?')">Tech Stack</button>
+                <button class="suggest-btn" onclick="useSuggestion('Is she available for hire?')">Availability</button>
+                <button class="suggest-btn" onclick="useSuggestion('What makes Faidat different?')">Why Faidat?</button>
+                <button class="suggest-btn" onclick="useSuggestion('How do I contact Faidat?')">Contact</button>
+                <button class="suggest-btn" onclick="useSuggestion('Tell me about her experience')">Experience</button>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: CHAT -->
+        <div class="right-panel">
+
+            <!-- HEADER -->
+            <div class="chat-header">
+                <button class="hamburger" onclick="toggleSidebar()">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="header-info">
+                    <div class="header-avatar">AF</div>
+                    <div>
+                        <div class="header-name">AskFaidat</div>
+                        <div class="header-status"><span class="status-dot small"></span> AI Assistant · Always Online</div>
+                    </div>
+                </div>
+                <button class="clear-btn" onclick="clearChat()">↺ New Chat</button>
+            </div>
+
+            <!-- CHAT BOX -->
+            <div class="chat-box" id="chatBox">
+                <div class="welcome-msg">
+                    <div class="welcome-avatar">AF</div>
+                    <div class="welcome-text">
+                        <h3>Hi there! 👋</h3>
+                        <p>I'm AskFaidat, your AI guide to everything about <strong>Faidat Egberinde</strong> — her skills, projects, experience and how to work with her.</p>
+                        <p>What would you like to know?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INPUT -->
+            <div class="input-area">
+                <div class="input-box">
+                    <textarea
+                        id="userInput"
+                        placeholder="Ask me anything about Faidat..."
+                        rows="1"
+                        onkeypress="handleKey(event)"
+                        oninput="autoResize(this)"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="disclaimer">AskFaidat is an AI — answers may not always be 100% accurate.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+</body>
+</html>
