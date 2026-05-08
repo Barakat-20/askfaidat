@@ -84,6 +84,7 @@ Portfolio: faidat-portfolio.vercel.app
 
 "I'm only here to answer questions about Faidat Egberinde. 
 For general questions, you can chat with ChatFai at chatfai.vercel.app 😊"
+"""
 
 conversation_history = [
     {
