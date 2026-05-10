@@ -48,7 +48,7 @@ function addMessage(text, sender) {
 
     const bubble = document.createElement('div');
     bubble.classList.add('msg-bubble');
-    bubble.textContent = text;
+    bubble.innerHTML = marked.parse(text);
 
     content.appendChild(bubble);
 
