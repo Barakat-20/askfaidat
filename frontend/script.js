@@ -133,7 +133,7 @@ async function sendMessage() {
     showTyping();
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/chat', {
+        const response = await fetch('https://askfaidat.onrender.com/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message })
@@ -156,7 +156,7 @@ async function sendMessage() {
 // ── CLEAR CHAT ──
 async function clearChat() {
     try {
-        await fetch('http://127.0.0.1:8000/clear', { method: 'POST' });
+        await fetch('https://askfaidat.onrender.com/clear', { method: 'POST' });
     } catch (e) {}
 
     chatBox.innerHTML = `
